@@ -18,7 +18,7 @@ struct Pitch: Equatable {
 class PitchDetector {
     private var minFrequency: Double = 50   // ~E2 (low E string)
     private var maxFrequency: Double = 500  // ~B4 (high B on fret 19)
-    private let threshold: Double = 0.1     // Detection threshold
+    private let threshold: Float = 0.1     // Detection threshold
     
     // MARK: - Cached FFT Resources (High Priority Fix #2)
     private let fftSize: Int = 4096
