@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1000001 /* Products in Sources */ = {isa = PBXBuildFile; fileRef = A1000000 /* Products */; };
+		A100000C /* ChordDetectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000D /* ChordDetectorApp.swift */; };
 		A1000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002 /* ContentView.swift */; };
 		A1000005 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004 /* AudioEngine.swift */; };
 		A1000007 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006 /* PitchDetector.swift */; };
@@ -23,6 +23,7 @@
 		A1000008 /* ChordRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordRecognizer.swift; sourceTree = "<group>"; };
 		A100000A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1000010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A100000D /* ChordDetectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordDetectorApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				A100000B /* ChordDetector */,
+				F5F3A9F62F3C394C00C8B39E /* Frameworks */,
 				A1000000 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +57,7 @@
 		A100000B /* ChordDetector */ = {
 			isa = PBXGroup;
 			children = (
+				A100000D /* ChordDetectorApp.swift */,
 				A1000002 /* ContentView.swift */,
 				A1000004 /* AudioEngine.swift */,
 				A1000006 /* PitchDetector.swift */,
@@ -63,6 +66,13 @@
 				A100000A /* Info.plist */,
 			);
 			path = ChordDetector;
+			sourceTree = "<group>";
+		};
+		F5F3A9F62F3C394C00C8B39E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1000001 /* Products in Sources */,
+				A100000C /* ChordDetectorApp.swift in Sources */,
 				A1000003 /* ContentView.swift in Sources */,
 				A1000005 /* AudioEngine.swift in Sources */,
 				A1000007 /* PitchDetector.swift in Sources */,
@@ -283,6 +293,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +326,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
