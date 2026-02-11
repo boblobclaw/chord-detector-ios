@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var audioEngine = AudioEngine()
     @State private var selectedInstrument: Instrument = .guitar
-    @State private var selectedTuning: Tuning = .guitar(.standard)
+    @State private var selectedTuningIndex: Int = 0
     
     var body: some View {
         VStack(spacing: 25) {
@@ -84,9 +84,9 @@ struct ContentView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal)
                 .onChange(of: selectedInstrument) { newInstrument in
-                    selectedTuning = newInstrument.tunings[0]
+                    selectedTuningIndex = 0
                     audioEngine.setInstrument(newInstrument)
-                    audioEngine.setTuning(selectedTuning)
+                    audioEngine.setTuning(newInstrument.tunings[0])
                 }
             }
             
@@ -97,15 +97,15 @@ struct ContentView: View {
                     .foregroundColor(.secondary)
                     .padding(.horizontal)
                 
-                Picker("Tuning", selection: $selectedTuning) {
-                    ForEach(selectedInstrument.tunings, id: \.self) { tuning in
-                        Text(tuning.name).tag(tuning)
+                Picker("Tuning", selection: $selectedTuningIndex) {
+                    ForEach(selectedInstrument.tunings.indices, id: \.self) { index in
+                        Text(selectedInstrument.tunings[index].name).tag(index)
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
                 .padding(.horizontal)
-                .onChange(of: selectedTuning) { newTuning in
-                    audioEngine.setTuning(newTuning)
+                .onChange(of: selectedTuningIndex) { newIndex in
+                    audioEngine.setTuning(selectedInstrument.tunings[newIndex])
                 }
             }
             

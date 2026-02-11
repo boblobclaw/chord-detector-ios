@@ -190,10 +190,17 @@ enum Instrument: String, CaseIterable, Identifiable {
     }
 }
 
-enum Tuning: Hashable {
+enum Tuning: Hashable, Identifiable {
     case guitar(GuitarTuning)
     case piano(PianoRange)
-    
+
+    var id: String {
+        switch self {
+        case .guitar(let tuning): return "guitar-\(tuning.rawValue)"
+        case .piano(let range): return "piano-\(range.rawValue)"
+        }
+    }
+
     var name: String {
         switch self {
         case .guitar(let tuning): return tuning.name
